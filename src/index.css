@@ -49,10 +49,15 @@ form input {
 
 form button {
   border-radius: 12px;
-  background-color: #ccc;
+  background-color: #6bb9d3;
   border-width: 0px;
-  height: 25px;
+  height: 35px;
+  margin-bottom: 10px;
+  color: #fff;
+}
+form button:hover {
   cursor: pointer;
+  transform: scale(1.02);;
 }
 
 textarea {
@@ -61,3 +66,4 @@ textarea {
   border: 1px solid #ccc;
   border-radius: 6px;
 }
+

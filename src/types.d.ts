@@ -1,6 +1,6 @@
-export interface Sub {
-    nick: string
-    subMonths: number
+export interface User {
+    name: string
+    months: any | number
     avatar: string
     description?: string
   }

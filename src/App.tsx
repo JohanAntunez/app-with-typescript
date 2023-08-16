@@ -1,48 +1,47 @@
-import React, { useEffect, useRef, useState } from 'react';
-import './App.css';
-import List from './components/List';
-import Form from './components/Form';
-import {Sub} from './types'
+import React, { useEffect, useRef, useState } from 'react'
+import './App.css'
+import List from './components/List'
+import Form from './components/Form'
+import {User} from './types'
 
 interface AppSate {
-  subs: Array<Sub>
-  newSubsNumber: number
+  user: Array<User>
+  newUsersNumber: number
 }
 const INITIAL_STATE = [
   {
-    nick: 'dapelu',
-    subMonths: 3,
+    name: 'Johan',
+    months: 3,
     avatar: 'https://i.pravatar.cc/150?u=dapelu',
-    description: 'Dapeli hace de moderador'
+    description: 'Johan es un usuario prermium'
   },
   {
-    nick: 'sergio_serrano',
-    subMonths: 7,
+    name: 'Alex',
+    months: 7,
     avatar: 'https://i.pravatar.cc/150?u=sergio_serrano'
   }
 ]
 
 function App() {
-  const [subs, setSubs] = useState<AppSate["subs"]>([])
-  const [newSubsNumbers, setNewSubsNumbers] = useState<AppSate["newSubsNumber"]>(0)
+  const [users, setUsers] = useState<AppSate["user"]>([])
   const divRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
-    setSubs(INITIAL_STATE)
+    setUsers(INITIAL_STATE)
   }, [])
 
-  const handleNewSub = (newSub: Sub): void => {
-    setSubs(subs => [...subs, newSub])
+  const handleNewUser = (newUser: User): void => {
+    setUsers(users => [...users, newUser])
   }
 
 
   return (
     <div className="App" ref={divRef}>
-      <h1>Subs</h1>
-      <List subs={subs}/>
-      <Form onNewSub={handleNewSub}/>
+      <h1>Users</h1>
+      <List users={users}/>
+      <Form onNewUser={handleNewUser}/>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App

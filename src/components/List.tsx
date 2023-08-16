@@ -1,18 +1,18 @@
-import {Sub} from '../types'
+import {User} from '../types'
 
 interface Props {
-    subs: Array<Sub>
+    users: Array<User>
 }
 
-const List = ({ subs }: Props) => {
+const List = ({ users }: Props) => {
 
     const renderList = (): JSX.Element[] => {
-        return subs.map(sub => {
+        return users.map(user => {
             return (
-                <li key={sub.nick}>
-                    <img src={sub.avatar} alt='Avatar' />
-                    <h4>{sub.nick} (<small>{sub.subMonths}</small>)</h4>
-                    <p>{sub.description?.substring(0, 100)}</p>
+                <li key={user.name}>
+                    <img src={user.avatar} alt='Avatar' />
+                    <h4>{user.name} (<small>{user.months}</small>)</h4>
+                    <p>{user.description?.substring(0, 100)}</p>
                 </li>
             )
         })
